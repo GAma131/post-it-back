@@ -30,4 +30,7 @@ router.get("/tags", noteController.getAllTags);
 // Filtrar notas por etiqueta
 router.get("/tag/:tag", noteController.getNotesByTag);
 
+// Eliminar una nota
+router.delete("/:id", noteController.deleteNote);
+
 module.exports = router;
