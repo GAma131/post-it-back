@@ -21,4 +21,16 @@ router.get("/", noteController.getNotes);
 // Crear una nueva nota
 router.post("/", noteValidations, noteController.createNote);
 
+// Actualizar una nota (cambiado de PUT a POST)
+router.post("/update/:id", noteValidations, noteController.updateNote);
+
+// Obtener todas las etiquetas únicas
+router.get("/tags", noteController.getAllTags);
+
+// Filtrar notas por etiqueta
+router.get("/tag/:tag", noteController.getNotesByTag);
+
+// Eliminar una nota (cambiado de DELETE a POST)
+router.post("/delete/:id", noteController.deleteNote);
+
 module.exports = router;
